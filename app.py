@@ -9,10 +9,11 @@ import matplotlib.pyplot as plt
 st.title("🐟 Multiclass Fish Image Classification - MobileNetV2")
 
 # Load the trained MobileNetV2 model (ensure the .h5 file is in the same directory)
-@st.cache_resource(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True)
 def load_model():
-    model = tf.keras.models.load_model('MobileNetV2_fish_model.h5')  
+    model = tf.keras.models.load_model('MobileNetV2_fish_model.h5')
     return model
+
 
 model = load_model()
 
